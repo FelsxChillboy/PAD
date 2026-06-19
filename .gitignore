@@ -1,0 +1,5 @@
+PROJECT 2/
+__pycache__/
+.venv/
+*.pyc
+absensi.db
