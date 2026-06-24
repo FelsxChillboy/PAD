@@ -2,7 +2,7 @@
   <br>
   <img src="assets/logo.png" alt="logo" width="96">
   <br><br>
-  <h1>âŒ¨ Aplikasi Absensi</h1>
+  <h1>Aplikasi Absensi</h1>
   <p>
     <code>Python 3.14</code>
     <code>Tkinter</code>
@@ -25,10 +25,10 @@
   </table>
   <br>
   <p>
-    <a href="#-fitur">Fitur</a> â€¢
-    <a href="#-cara-menjalankan">Instalasi</a> â€¢
-    <a href="#-akun-default">Akun</a> â€¢
-    <a href="#-tampilan">Tampilan</a> â€¢
+    <a href="#-fitur">Fitur</a> &bull;
+    <a href="#-cara-menjalankan">Instalasi</a> &bull;
+    <a href="#-akun-default">Akun</a> &bull;
+    <a href="#-tampilan">Tampilan</a> &bull;
     <a href="#-struktur">Struktur</a>
   </p>
   <br>
@@ -37,11 +37,11 @@
 ---
 
 <div align="center">
-  <h3>ðŸ“Œ &nbsp; Ringkasan Proyek</h3>
+  <h3>Ringkasan Proyek</h3>
   <p>
     Aplikasi desktop <strong>absensi mahasiswa</strong> berbasis <strong>Python Tkinter</strong>
     dan <strong>SQLite</strong> dengan arsitektur <strong>Model-View-Controller (MVC)</strong>.
-    Dua role pengguna â€” Dosen dan Mahasiswa â€” dengan dashboard yang berbeda.
+    Dua role pengguna — Dosen dan Mahasiswa — dengan dashboard yang berbeda.
   </p>
   <p>
     <i>Zero external dependencies. 100% Python built-in.</i>
@@ -50,54 +50,54 @@
 
 ---
 
-## â—† Fitur
+## Fitur
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h4>ðŸ” &nbsp; Autentikasi</h4>
+      <h4>Autentikasi</h4>
       Login aman dengan username & password, routing otomatis sesuai role.
     </td>
     <td width="50%" valign="top">
-      <h4>ðŸ‘¥ &nbsp; CRUD Mahasiswa</h4>
+      <h4>CRUD Mahasiswa</h4>
       Tambah, edit, dan hapus data mahasiswa dengan validasi input.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>ðŸ“‹ &nbsp; Absensi Harian</h4>
+      <h4>Absensi Harian</h4>
       Input kehadiran per tanggal: Hadir, Izin, Sakit, atau Alpha.
     </td>
     <td width="50%" valign="top">
-      <h4>ðŸ“Š &nbsp; Rekap Otomatis</h4>
+      <h4>Rekap Otomatis</h4>
       Ringkasan jumlah Hadir, Izin, Sakit, Alpha per mahasiswa.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>ðŸ” &nbsp; Pencarian Real-Time</h4>
+      <h4>Pencarian Real-Time</h4>
       Filter data mahasiswa langsung saat mengetik.
     </td>
     <td width="50%" valign="top">
-      <h4>âš¡ &nbsp; Bulk Actions</h4>
+      <h4>Bulk Actions</h4>
       Isi cepat seluruh status (Semua Hadir / Izin / Alpha) satu klik.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>ðŸŽ¨ &nbsp; UI Modern</h4>
+      <h4>UI Modern</h4>
       Purple theme (#553F83), hover effects, sidebar navigasi, toast notification.
     </td>
     <td width="50%" valign="top">
-      <h4>ðŸ“¦ &nbsp; Database Terpadu</h4>
-      Satu file database.py menangani semua query â€” init, seed, CRUD, rekap.
+      <h4>MVC Architecture</h4>
+      Model (database/) terpisah dari View (views/) — kode bersih dan terstruktur.
     </td>
   </tr>
 </table>
 
 ---
 
-## â—† Cara Menjalankan
+## Cara Menjalankan
 
 ### 1. Clone Repository
 
@@ -120,7 +120,7 @@ cd "PROJECT 2"
 python main.py
 ```
 
-> ðŸ’¡ Pastikan Python 3 sudah terinstall. Cek dengan `python --version`.
+> Pastikan Python 3 sudah terinstall. Cek dengan `python --version`.
 
 ### 4. Login
 
@@ -136,17 +136,17 @@ Gunakan akun default dari tabel di bawah.
 
 ---
 
-## â—† Akun Default
+## Akun Default
 
 | Role | Username | Password |
 |------|----------|----------|
-| ðŸ‘¨â€ðŸ« **Dosen** | `dosen1` | `123456` |
-| ðŸ‘¨â€ðŸŽ“ **Mahasiswa** | `mahasiswa1` | `123456` |
-| ðŸ‘¨â€ðŸŽ“ **Mahasiswa** | `mahasiswa2` | `123456` |
+| Dosen | `dosen1` | `123456` |
+| Mahasiswa | `mahasiswa1` | `123456` |
+| Mahasiswa | `mahasiswa2` | `123456` |
 
 ---
 
-## â—† Tampilan Aplikasi
+## Tampilan Aplikasi
 
 <div align="center">
   <table>
@@ -165,31 +165,31 @@ Gunakan akun default dari tabel di bawah.
 
 ---
 
-## â—† Struktur Proyek
+## Struktur Proyek
 
 ```
 PROJECT 2/
-â”‚
-â”œâ”€â”€ main.py                       # Entry point (AbsensiApp class)
-â”‚
-â”œâ”€â”€ database/                     # Database layer
-â”‚   â”œâ”€â”€ __init__.py
-â”‚   â”œâ”€â”€ database.py               # init, seed, & semua query
-â”‚   â””â”€â”€ absensi.db                # Database SQLite
-â”‚
-â”œâ”€â”€ views/                        # User interface layer
-â”‚   â”œâ”€â”€ __init__.py
-â”‚   â”œâ”€â”€ view_login.py             # Login dengan callback
-â”‚   â”œâ”€â”€ view_dosen_dashboard.py   # Dashboard dosen + CRUD + absensi
-â”‚   â””â”€â”€ view_mahasiswa_dashboard.py # Dashboard mahasiswa + rekap
-â”‚
-â””â”€â”€ assets/
-    â””â”€â”€ logo.png                   # Logo aplikasi
+│
+├── main.py                       # Entry point (AbsensiApp class)
+│
+├── database/                     # Model layer
+│   ├── __init__.py
+│   ├── database.py               # init, seed, & semua query
+│   └── absensi.db                # Database SQLite
+│
+├── views/                        # View + Controller layer
+│   ├── __init__.py
+│   ├── view_login.py             # Login dengan callback
+│   ├── view_dosen_dashboard.py   # Dashboard dosen + CRUD + absensi
+│   └── view_mahasiswa_dashboard.py # Dashboard mahasiswa + rekap
+│
+└── assets/
+    └── logo.png                   # Logo aplikasi
 ```
 
 ---
 
-## â—† Spesifikasi Teknis
+## Spesifikasi Teknis
 
 | Komponen | Detail |
 |----------|--------|
@@ -211,4 +211,3 @@ PROJECT 2/
     <code>Made with Python + Tkinter</code>
   </sub>
 </div>
-
