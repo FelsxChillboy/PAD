@@ -212,7 +212,7 @@ PROJECT 2/
 <div align="center">
   <br>
   <sub>
-    Tugas Pemrograman Desktop &bull; 2026
+    Tugas Pemrograman Apliksai Desktop &bull; 2026
     <br>
     <code>Made with Python + Tkinter</code>
   </sub>
