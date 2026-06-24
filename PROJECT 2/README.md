@@ -170,18 +170,24 @@ Gunakan akun default dari tabel di bawah.
 ```
 PROJECT 2/
 │
-├── main.py                       # Entry point (AbsensiApp class)
+├── main.py                       # Entry point
 │
-├── database/                     # Model layer
+├── controller/                   # Business logic layer
 │   ├── __init__.py
-│   ├── database.py               # init, seed, & semua query
-│   └── absensi.db                # Database SQLite
+│   ├── login_controller.py       # Validasi login & routing
+│   ├── dosen_controller.py       # CRUD mahasiswa & absensi
+│   └── mahasiswa_controller.py   # Lihat absensi & rekap
 │
-├── views/                        # View + Controller layer
+├── model/                        # Database layer
 │   ├── __init__.py
-│   ├── view_login.py             # Login dengan callback
-│   ├── view_dosen_dashboard.py   # Dashboard dosen + CRUD + absensi
-│   └── view_mahasiswa_dashboard.py # Dashboard mahasiswa + rekap
+│   ├── user_model.py             # Query user & mahasiswa
+│   └── absensi_model.py          # Query absensi
+│
+├── view/                         # User interface layer
+│   ├── __init__.py
+│   ├── login_view.py             # Form login
+│   ├── dosen_view.py             # Dashboard dosen
+│   └── mahasiswa_view.py         # Dashboard mahasiswa
 │
 └── assets/
     └── logo.png                   # Logo aplikasi

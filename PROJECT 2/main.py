@@ -1,46 +1,61 @@
 import tkinter as tk
-from database import init_database, insert_default_data
-from views.view_login import LoginView
-from views.view_mahasiswa_dashboard import MahasiswaDashboard
-from views.view_dosen_dashboard import DosenDashboard
+import sqlite3
+import os
+from model.user_model import UserModel
+from controller.login_controller import LoginController
 
-class AbsensiApp:
-    """Main Application"""
+def init_database():
+    db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "absensi.db")
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL,
+            role TEXT NOT NULL,
+            nama TEXT NOT NULL
+        )
+    """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS absensi (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            tanggal TEXT NOT NULL,
+            jam_masuk TEXT,
+            jam_pulang TEXT,
+            status TEXT DEFAULT 'hadir',
+            keterangan TEXT DEFAULT '',
+            FOREIGN KEY (user_id) REFERENCES users(id),
+            UNIQUE(user_id, tanggal)
+        )
+    """)
+    cur.execute("SELECT COUNT(*) FROM users")
+    if cur.fetchone()[0] == 0:
+        for u in [("dosen1", "123456", "dosen", "Dosen Satu"),
+                  ("mahasiswa1", "123456", "mahasiswa", "Mahasiswa Satu"),
+                  ("mahasiswa2", "123456", "mahasiswa", "Mahasiswa Dua")]:
+            try:
+                cur.execute("INSERT INTO users (username, password, role, nama) VALUES (?, ?, ?, ?)", u)
+            except sqlite3.IntegrityError:
+                pass
+    conn.commit()
+    conn.close()
 
-    def __init__(self):
-        self.root = tk.Tk()
-        self.root.resizable(False, False)
+def main():
+    init_database()
 
-        # Initialize database
-        init_database()
-        insert_default_data()
+    root = tk.Tk()
+    root.title("Sistem Absensi")
+    root.geometry("920x640")
+    root.configure(bg="#F5F3F8")
+    root.resizable(False, False)
+    root.eval("tk::PlaceWindow . center")
 
-        # Start with login
-        self.show_login()
+    user_model = UserModel()
+    LoginController(root, user_model)
 
-    def show_login(self):
-        """Show login view"""
-        self.clear_window()
-        LoginView(self.root, self.on_login_success)
-
-    def on_login_success(self, user):
-        """Called when login is successful"""
-        self.clear_window()
-
-        if user['role'] == 'mahasiswa':
-            MahasiswaDashboard(self.root, user, self.show_login)
-        elif user['role'] == 'dosen':
-            DosenDashboard(self.root, user, self.show_login)
-
-    def clear_window(self):
-        """Clear window widgets"""
-        for widget in self.root.winfo_children():
-            widget.destroy()
-
-    def run(self):
-        """Run the application"""
-        self.root.mainloop()
+    root.mainloop()
 
 if __name__ == "__main__":
-    app = AbsensiApp()
-    app.run()
+    main()
