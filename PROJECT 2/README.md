@@ -189,6 +189,11 @@ PROJECT 2/
 │   ├── dosen_view.py             # Dashboard dosen
 │   └── mahasiswa_view.py         # Dashboard mahasiswa
 │
+├── database/
+│   ├── __init__.py
+│   ├── database.py               # Semua query & koneksi
+│   └── absensi.db                # Database SQLite
+│
 └── assets/
     └── logo.png                   # Logo aplikasi
 ```
