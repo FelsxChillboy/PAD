@@ -1,13 +1,13 @@
-<div align="center">
+﻿<div align="center">
   <br>
   <img src="assets/logo.png" alt="logo" width="96">
   <br><br>
-  <h1>⌨ Aplikasi Absensi</h1>
+  <h1>âŒ¨ Aplikasi Absensi</h1>
   <p>
     <code>Python 3.14</code>
     <code>Tkinter</code>
     <code>SQLite3</code>
-    <code>Callback Pattern</code>
+    <code>MVC Pattern</code>
   </p>
   <br>
   <table>
@@ -25,10 +25,10 @@
   </table>
   <br>
   <p>
-    <a href="#-fitur">Fitur</a> •
-    <a href="#-cara-menjalankan">Instalasi</a> •
-    <a href="#-akun-default">Akun</a> •
-    <a href="#-tampilan">Tampilan</a> •
+    <a href="#-fitur">Fitur</a> â€¢
+    <a href="#-cara-menjalankan">Instalasi</a> â€¢
+    <a href="#-akun-default">Akun</a> â€¢
+    <a href="#-tampilan">Tampilan</a> â€¢
     <a href="#-struktur">Struktur</a>
   </p>
   <br>
@@ -37,11 +37,11 @@
 ---
 
 <div align="center">
-  <h3>📌 &nbsp; Ringkasan Proyek</h3>
+  <h3>ðŸ“Œ &nbsp; Ringkasan Proyek</h3>
   <p>
     Aplikasi desktop <strong>absensi mahasiswa</strong> berbasis <strong>Python Tkinter</strong>
-    dan <strong>SQLite</strong> dengan arsitektur <strong>callback-based</strong>.
-    Dua role pengguna — Dosen dan Mahasiswa — dengan dashboard yang berbeda.
+    dan <strong>SQLite</strong> dengan arsitektur <strong>Model-View-Controller (MVC)</strong>.
+    Dua role pengguna â€” Dosen dan Mahasiswa â€” dengan dashboard yang berbeda.
   </p>
   <p>
     <i>Zero external dependencies. 100% Python built-in.</i>
@@ -50,54 +50,54 @@
 
 ---
 
-## ◆ Fitur
+## â—† Fitur
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h4>🔐 &nbsp; Autentikasi</h4>
+      <h4>ðŸ” &nbsp; Autentikasi</h4>
       Login aman dengan username & password, routing otomatis sesuai role.
     </td>
     <td width="50%" valign="top">
-      <h4>👥 &nbsp; CRUD Mahasiswa</h4>
+      <h4>ðŸ‘¥ &nbsp; CRUD Mahasiswa</h4>
       Tambah, edit, dan hapus data mahasiswa dengan validasi input.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>📋 &nbsp; Absensi Harian</h4>
+      <h4>ðŸ“‹ &nbsp; Absensi Harian</h4>
       Input kehadiran per tanggal: Hadir, Izin, Sakit, atau Alpha.
     </td>
     <td width="50%" valign="top">
-      <h4>📊 &nbsp; Rekap Otomatis</h4>
+      <h4>ðŸ“Š &nbsp; Rekap Otomatis</h4>
       Ringkasan jumlah Hadir, Izin, Sakit, Alpha per mahasiswa.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>🔍 &nbsp; Pencarian Real-Time</h4>
+      <h4>ðŸ” &nbsp; Pencarian Real-Time</h4>
       Filter data mahasiswa langsung saat mengetik.
     </td>
     <td width="50%" valign="top">
-      <h4>⚡ &nbsp; Bulk Actions</h4>
+      <h4>âš¡ &nbsp; Bulk Actions</h4>
       Isi cepat seluruh status (Semua Hadir / Izin / Alpha) satu klik.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>🎨 &nbsp; UI Modern</h4>
+      <h4>ðŸŽ¨ &nbsp; UI Modern</h4>
       Purple theme (#553F83), hover effects, sidebar navigasi, toast notification.
     </td>
     <td width="50%" valign="top">
-      <h4>📦 &nbsp; Database Terpadu</h4>
-      Satu file database.py menangani semua query — init, seed, CRUD, rekap.
+      <h4>ðŸ“¦ &nbsp; Database Terpadu</h4>
+      Satu file database.py menangani semua query â€” init, seed, CRUD, rekap.
     </td>
   </tr>
 </table>
 
 ---
 
-## ◆ Cara Menjalankan
+## â—† Cara Menjalankan
 
 ### 1. Clone Repository
 
@@ -120,7 +120,7 @@ cd "PROJECT 2"
 python main.py
 ```
 
-> 💡 Pastikan Python 3 sudah terinstall. Cek dengan `python --version`.
+> ðŸ’¡ Pastikan Python 3 sudah terinstall. Cek dengan `python --version`.
 
 ### 4. Login
 
@@ -136,17 +136,17 @@ Gunakan akun default dari tabel di bawah.
 
 ---
 
-## ◆ Akun Default
+## â—† Akun Default
 
 | Role | Username | Password |
 |------|----------|----------|
-| 👨‍🏫 **Dosen** | `dosen1` | `123456` |
-| 👨‍🎓 **Mahasiswa** | `mahasiswa1` | `123456` |
-| 👨‍🎓 **Mahasiswa** | `mahasiswa2` | `123456` |
+| ðŸ‘¨â€ðŸ« **Dosen** | `dosen1` | `123456` |
+| ðŸ‘¨â€ðŸŽ“ **Mahasiswa** | `mahasiswa1` | `123456` |
+| ðŸ‘¨â€ðŸŽ“ **Mahasiswa** | `mahasiswa2` | `123456` |
 
 ---
 
-## ◆ Tampilan Aplikasi
+## â—† Tampilan Aplikasi
 
 <div align="center">
   <table>
@@ -165,38 +165,38 @@ Gunakan akun default dari tabel di bawah.
 
 ---
 
-## ◆ Struktur Proyek
+## â—† Struktur Proyek
 
 ```
 PROJECT 2/
-│
-├── main.py                       # Entry point (AbsensiApp class)
-│
-├── database/                     # Database layer
-│   ├── __init__.py
-│   ├── database.py               # init, seed, & semua query
-│   └── absensi.db                # Database SQLite
-│
-├── views/                        # User interface layer
-│   ├── __init__.py
-│   ├── view_login.py             # Login dengan callback
-│   ├── view_dosen_dashboard.py   # Dashboard dosen + CRUD + absensi
-│   └── view_mahasiswa_dashboard.py # Dashboard mahasiswa + rekap
-│
-└── assets/
-    └── logo.png                   # Logo aplikasi
+â”‚
+â”œâ”€â”€ main.py                       # Entry point (AbsensiApp class)
+â”‚
+â”œâ”€â”€ database/                     # Database layer
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ database.py               # init, seed, & semua query
+â”‚   â””â”€â”€ absensi.db                # Database SQLite
+â”‚
+â”œâ”€â”€ views/                        # User interface layer
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ view_login.py             # Login dengan callback
+â”‚   â”œâ”€â”€ view_dosen_dashboard.py   # Dashboard dosen + CRUD + absensi
+â”‚   â””â”€â”€ view_mahasiswa_dashboard.py # Dashboard mahasiswa + rekap
+â”‚
+â””â”€â”€ assets/
+    â””â”€â”€ logo.png                   # Logo aplikasi
 ```
 
 ---
 
-## ◆ Spesifikasi Teknis
+## â—† Spesifikasi Teknis
 
 | Komponen | Detail |
 |----------|--------|
 | **Bahasa** | Python 3.14 |
 | **GUI Framework** | Tkinter (native library) |
 | **Database** | SQLite3 (native library) |
-| **Architecture** | Callback-based (view langsung panggil database) |
+| **Architecture** | Model-View-Controller (MVC) |
 | **External Dependencies** | None |
 | **Total Files** | 7 file Python |
 | **Database File** | `database/absensi.db` (auto-generated) |
@@ -211,3 +211,4 @@ PROJECT 2/
     <code>Made with Python + Tkinter</code>
   </sub>
 </div>
+
