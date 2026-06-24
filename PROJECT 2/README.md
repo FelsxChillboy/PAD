@@ -99,15 +99,40 @@
 
 ## ◆ Cara Menjalankan
 
-```bash
-# 1. Buka terminal dan masuk ke direktori proyek
-cd "PROJECT 2"
+### 1. Clone Repository
 
-# 2. Jalankan aplikasi (tanpa installasi paket tambahan)
+Buka terminal/command prompt, lalu jalankan:
+
+```bash
+git clone https://github.com/FelsxChillboy/PAD.git
+cd PAD
+```
+
+### 2. Masuk ke Folder Proyek
+
+```bash
+cd "PROJECT 2"
+```
+
+### 3. Jalankan Aplikasi
+
+```bash
 python main.py
 ```
 
-> 💡 Pastikan Python 3 sudah terinstall di sistem Anda. Cek dengan `python --version`.
+> 💡 Pastikan Python 3 sudah terinstall. Cek dengan `python --version`.
+
+### 4. Login
+
+Gunakan akun default dari tabel di bawah.
+
+### Troubleshooting
+
+| Masalah | Solusi |
+|---------|--------|
+| `python` tidak dikenali | Coba `py main.py` atau `python3 main.py` |
+| File tidak ditemukan | Pastikan sudah `cd "PROJECT 2"` |
+| Database error | Hapus file `absensi.db`, lalu jalankan ulang (terbuat otomatis) |
 
 ---
 
