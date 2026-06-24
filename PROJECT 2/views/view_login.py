@@ -1,4 +1,5 @@
 import tkinter as tk
+import database.database as db
 
 BG = "#F5F3F8"
 WHITE = "#FFFFFF"
@@ -15,9 +16,15 @@ FONT_TITLE = ("Segoe UI", 22, "bold")
 FONT_SMALL = ("Segoe UI", 9)
 
 class LoginView:
-    def __init__(self, root, controller):
+    def __init__(self, root, on_login_success):
         self.root = root
-        self.controller = controller
+        self.on_login_success = on_login_success
+        self.root.title("Login - Sistem Absensi")
+        self.root.geometry("920x640")
+        self.root.configure(bg=BG)
+        self.root.resizable(False, False)
+        self.root.eval("tk::PlaceWindow . center")
+
         self.frame = tk.Frame(root, bg=BG)
         self.frame.pack(fill="both", expand=True)
 
@@ -56,7 +63,7 @@ class LoginView:
         tk.Label(self.card_frame, text="Masuk ke akun Anda", font=FONT,
                  fg=MUTED, bg=WHITE).pack(pady=0)
 
-        self._build_input("Username", self.controller.login)
+        self._build_input("Username", self._on_login)
         self.entry_username = self._last_entry
         self.entry_username.focus()
 
@@ -96,22 +103,17 @@ class LoginView:
         return btn
 
     def _on_login(self):
+        username, password = self.entry_username.get(), self.entry_password.get()
+        if not username or not password:
+            self.show_toast("Username dan password harus diisi", False)
+            return
+
         self.btn_login.configure(text="Memproses...", state="disabled")
         self.root.update()
-        self.controller.login()
 
-    def enable_login(self):
-        self.btn_login.configure(text="Login", state="normal")
-
-    def show_error(self, msg):
-        self.label_error.config(text=msg)
-        self.enable_login()
-
-    def clear_error(self):
-        self.label_error.config(text="")
-
-    def get_input(self):
-        return self.entry_username.get(), self.entry_password.get()
-
-    def destroy(self):
-        self.frame.destroy()
+        user = db.login(username, password)
+        if user:
+            self.on_login_success(user)
+        else:
+            self.show_toast("Username atau password salah", False)
+            self.btn_login.configure(text="Login", state="normal")
