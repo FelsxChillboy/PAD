@@ -1,78 +1,102 @@
-<p align="center">
-  <img src="assets/logo.png" alt="Logo" width="80" height="80">
-</p>
-
-<h1 align="center">Aplikasi Absensi</h1>
-<p align="center">
-  Tkinter MVC &bull; Python &bull; SQLite
-</p>
-<p align="center">
-  <b>Ahmad Azarruddin</b> &mdash; 23260028
-</p>
+<div align="center">
+  <img src="assets/logo.png" alt="Logo" width="90">
+  <br><br>
+  <h1>Aplikasi Absensi</h1>
+  <p>
+    <sup><i>built with</i></sup>
+    <br>
+    <code>Python 3.14</code> <code>Tkinter</code> <code>SQLite3</code> <code>MVC</code>
+  </p>
+  <br>
+  <table>
+    <tr>
+      <td><b>Ahmad Azarruddin</b></td>
+      <td><kbd>23260028</kbd></td>
+    </tr>
+  </table>
+</div>
 
 <br>
 
 ---
 
-## Tentang
+## <sup>01</sup> &nbsp; Latar Belakang
 
-Aplikasi desktop absensi mahasiswa dengan GUI berbasis Python Tkinter dan SQLite, menggunakan arsitektur **MVC (Model-View-Controller)**. Mendukung dua role pengguna: **Dosen** dan **Mahasiswa**.
+Aplikasi desktop untuk mengelola absensi mahasiswa dengan antarmuka GUI modern. Menggunakan arsitektur **Model-View-Controller** dengan pemisahan logic, data, dan tampilan secara ketat. Database **SQLite** terintegrasi tanpa perlu konfigurasi tambahan.
 
-<br>
+---
 
-## Fitur
+## <sup>02</sup> &nbsp; Fitur Unggulan
 
-- **Autentikasi** &mdash; Login dengan username dan password
-- **Role Dashboard** &mdash; Tampilan berbeda untuk Dosen dan Mahasiswa
-- **CRUD Mahasiswa** &mdash; Tambah, edit, hapus data mahasiswa
-- **Absensi Harian** &mdash; Input status Hadir / Izin / Sakit / Alpha
-- **Rekap Otomatis** &mdash; Ringkasan absensi per mahasiswa
-- **Pencarian** &mdash; Filter data real-time
-- **Bulk Actions** &mdash; Isi cepat semua status sekaligus
-- **Toast Notification** &mdash; Notifikasi modern tanpa messagebox
+<blockquote>
+  &nbsp; Login autentikasi dengan dua role — Dosen dan Mahasiswa
+  <br>
+  &nbsp; Dashboard berbeda sesuai peran pengguna
+  <br>
+  &nbsp; CRUD data mahasiswa dengan validasi input
+  <br>
+  &nbsp; Absensi harian dengan opsi Hadir, Izin, Sakit, Alpha
+  <br>
+  &nbsp; Rekap absensi otomatis dengan visualisasi angka
+  <br>
+  &nbsp; Pencarian data secara real-time
+  <br>
+  &nbsp; Bulk action — isi semua status dalam satu klik
+  <br>
+  &nbsp; Toast notification tanpa messagebox konvensional
+</blockquote>
 
-<br>
+---
 
-## Cara Menjalankan
+## <sup>03</sup> &nbsp; Cara Menjalankan
 
 ```bash
+# Masuk ke direktori proyek
 cd "PROJECT 2"
+
+# Jalankan aplikasi
 python main.py
 ```
 
-<br>
+> **Catatan:** Tidak memerlukan instalasi paket tambahan. Semua library adalah bawaan Python.
 
-## Login Default
+---
+
+## <sup>04</sup> &nbsp; Akun Default
 
 | Role | Username | Password |
 |------|----------|----------|
-| Dosen | `dosen1` | `123456` |
-| Mahasiswa | `mahasiswa1` | `123456` |
-| Mahasiswa | `mahasiswa2` | `123456` |
+| `Dosen` | <kbd>dosen1</kbd> | <kbd>123456</kbd> |
+| `Mahasiswa` | <kbd>mahasiswa1</kbd> | <kbd>123456</kbd> |
+| `Mahasiswa` | <kbd>mahasiswa2</kbd> | <kbd>123456</kbd> |
 
-<br>
+---
 
-## Screenshot
+## <sup>05</sup> &nbsp; Tampilan Aplikasi
 
-| **Login** | **Dashboard Dosen** | **Dashboard Mahasiswa** |
-|:---------:|:-------------------:|:-----------------------:|
+<div align="center">
+
+| **Login** | **Dashboard Dosen** | **Mahasiswa** |
+|:---------:|:-------------------:|:-------------:|
 | ![Login](image.png) | ![Dosen](image-1.png) | ![Mahasiswa](image-2.png) |
 
-<br>
+</div>
 
-## Struktur Proyek
+---
+
+## <sup>06</sup> &nbsp; Struktur Proyek
 
 ```
 PROJECT 2/
 ├── main.py                 # Entry point
-├── controller/             # Logic layer
+├── controller/             # Business logic
 │   ├── login_controller.py
 │   ├── dosen_controller.py
 │   └── mahasiswa_controller.py
-├── model/                  # Data layer
+├── model/                  # Database layer
 │   ├── user_model.py
 │   └── absensi_model.py
-├── view/                   # UI layer
+├── view/                   # User interface
 │   ├── login_view.py
 │   ├── dosen_view.py
 │   └── mahasiswa_view.py
@@ -80,14 +104,20 @@ PROJECT 2/
     └── logo.png
 ```
 
-<br>
+---
 
-## Teknologi
+## <sup>07</sup> &nbsp; Spesifikasi Teknis
 
-| | |
-|---|---|
+| Komponen | Detail |
+|----------|--------|
 | **Bahasa** | Python 3.14 |
-| **GUI** | Tkinter (standar library) |
-| **Database** | SQLite3 (standar library) |
+| **GUI Framework** | Tkinter (native) |
+| **Database** | SQLite3 (native) |
 | **Arsitektur** | MVC Pattern |
-| **Ketergantungan** | None (100% built-in) |
+| **Dependency** | Zero — 100% built-in |
+
+---
+
+<div align="center">
+  <sub>&copy; 2026 &middot; Tugas Pemrograman Desktop</sub>
+</div>
