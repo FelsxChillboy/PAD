@@ -7,7 +7,7 @@
     <code>Python 3.14</code>
     <code>Tkinter</code>
     <code>SQLite3</code>
-    <code>MVC Architecture</code>
+    <code>Callback Pattern</code>
   </p>
   <br>
   <table>
@@ -40,7 +40,7 @@
   <h3>📌 &nbsp; Ringkasan Proyek</h3>
   <p>
     Aplikasi desktop <strong>absensi mahasiswa</strong> berbasis <strong>Python Tkinter</strong>
-    dan <strong>SQLite</strong> dengan arsitektur <strong>Model-View-Controller (MVC)</strong>.
+    dan <strong>SQLite</strong> dengan arsitektur <strong>callback-based</strong>.
     Dua role pengguna — Dosen dan Mahasiswa — dengan dashboard yang berbeda.
   </p>
   <p>
@@ -89,8 +89,8 @@
       Purple theme (#553F83), hover effects, sidebar navigasi, toast notification.
     </td>
     <td width="50%" valign="top">
-      <h4>🏛 &nbsp; MVC Architecture</h4>
-      Model terpisah dari View dan Controller — kode bersih dan terstruktur.
+      <h4>📦 &nbsp; Database Terpadu</h4>
+      Satu file database.py menangani semua query — init, seed, CRUD, rekap.
     </td>
   </tr>
 </table>
@@ -132,7 +132,7 @@ Gunakan akun default dari tabel di bawah.
 |---------|--------|
 | `python` tidak dikenali | Coba `py main.py` atau `python3 main.py` |
 | File tidak ditemukan | Pastikan sudah `cd "PROJECT 2"` |
-| Database error | Hapus file `absensi.db`, lalu jalankan ulang (terbuat otomatis) |
+| Database error | Hapus `database/absensi.db`, lalu jalankan ulang (terbuat otomatis) |
 
 ---
 
@@ -170,29 +170,18 @@ Gunakan akun default dari tabel di bawah.
 ```
 PROJECT 2/
 │
-├── main.py                       # Entry point aplikasi
+├── main.py                       # Entry point (AbsensiApp class)
 │
-├── controller/                   # Business logic layer
+├── database/                     # Database layer
 │   ├── __init__.py
-│   ├── login_controller.py       # Validasi login & routing
-│   ├── dosen_controller.py       # CRUD mahasiswa & absensi
-│   └── mahasiswa_controller.py   # Lihat absensi & rekap
-│
-├── model/                        # Database layer
-│   ├── __init__.py
-│   ├── user_model.py             # Query user & mahasiswa
-│   └── absensi_model.py          # Query absensi
-│
-├── view/                         # User interface layer
-│   ├── __init__.py
-│   ├── login_view.py             # Form login
-│   ├── dosen_view.py             # Dashboard dosen
-│   └── mahasiswa_view.py         # Dashboard mahasiswa
-│
-├── database/
-│   ├── __init__.py
-│   ├── database.py               # Semua query & koneksi
+│   ├── database.py               # init, seed, & semua query
 │   └── absensi.db                # Database SQLite
+│
+├── views/                        # User interface layer
+│   ├── __init__.py
+│   ├── view_login.py             # Login dengan callback
+│   ├── view_dosen_dashboard.py   # Dashboard dosen + CRUD + absensi
+│   └── view_mahasiswa_dashboard.py # Dashboard mahasiswa + rekap
 │
 └── assets/
     └── logo.png                   # Logo aplikasi
@@ -207,17 +196,17 @@ PROJECT 2/
 | **Bahasa** | Python 3.14 |
 | **GUI Framework** | Tkinter (native library) |
 | **Database** | SQLite3 (native library) |
-| **Design Pattern** | Model-View-Controller (MVC) |
+| **Architecture** | Callback-based (view langsung panggil database) |
 | **External Dependencies** | None |
-| **Total Files** | 14 file Python |
-| **Database File** | `absensi.db` (auto-generated) |
+| **Total Files** | 7 file Python |
+| **Database File** | `database/absensi.db` (auto-generated) |
 
 ---
 
 <div align="center">
   <br>
   <sub>
-    Tugas Pemrograman Apliksai Desktop &bull; 2026
+    Tugas Pemrograman Aplikasi Desktop &bull; 2026
     <br>
     <code>Made with Python + Tkinter</code>
   </sub>
