@@ -26,7 +26,6 @@
 
 ## Screenshot
 
-( tambahkan screenshot di sini =)
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+![Login](image.png)
+![Dashboard Dosen](image-1.png)
+![Dashboard Mahasiswa](image-2.png)
